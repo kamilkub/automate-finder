@@ -35,6 +35,7 @@ public class MojaOstroleka {
 
     }
 
+
     public static void getAllJobsInformation() {
 
         int pagesCount = getPagesCount();
@@ -79,13 +80,17 @@ public class MojaOstroleka {
 
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(workFolderUrl + "//moja-ostroleka.html"));
-            for(String line : jobInfo)
+            for(String line : jobInfo){
                 writer.write(line);
                 writer.newLine();
 
+            }
+
+            writer.close();
         } catch (IOException e) {
             logger.error(e.toString());
         }
+
 
     }
 
