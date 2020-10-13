@@ -6,7 +6,7 @@ import org.jobfinder.MojaOstrolekaFinder;
 
 public class App {
 
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
         new ChooseFinder(new MojaOstrolekaFinder()).findJob();
     }
 }

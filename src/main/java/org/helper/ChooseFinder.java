@@ -10,7 +10,7 @@ public class ChooseFinder {
         this.finder = finder;
     }
 
-    public void findJob(){
+    public void findJob() {
         finder.getAllJobsInformation();
     }
 }

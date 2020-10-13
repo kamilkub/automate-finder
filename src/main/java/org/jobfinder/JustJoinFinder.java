@@ -15,22 +15,22 @@ import java.io.File;
 
 public class JustJoinFinder implements Finder {
 
-        private static final String justJoinUrl = "https://justjoin.it/";
-        private static final Logger logger = LoggerFactory.getLogger(JustJoinFinder.class);
-        private String city;
-        private String level;
-        private String language;
+    private static final String justJoinUrl = "https://justjoin.it/";
+    private static final Logger logger = LoggerFactory.getLogger(JustJoinFinder.class);
+    private String city;
+    private String level;
+    private String language;
 
-        public JustJoinFinder(String city, String level, String language) {
-            this.city = city;
-            this.level = level;
-            this.language = language;
-        }
+    public JustJoinFinder(String city, String level, String language) {
+        this.city = city;
+        this.level = level;
+        this.language = language;
+    }
 
 
-        @Override
-        public void getAllJobsInformation() {
-            String urlToConnect = justJoinUrl + city + File.separator + language + File.separator + level;
+    @Override
+    public void getAllJobsInformation() {
+        String urlToConnect = justJoinUrl + city + File.separator + language + File.separator + level;
 
         try {
             WebClient webClient = new WebClient(BrowserVersion.CHROME);
@@ -46,9 +46,9 @@ public class JustJoinFinder implements Finder {
 
             jobComponents.forEach(System.out::println);
 
-            } catch (Exception e) {
+        } catch (Exception e) {
             logger.error("Error while connecting to the url", e.fillInStackTrace());
-            }
-
         }
+
+    }
 }

@@ -5,10 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class AppTest
-{
+class AppTest {
     @Test
     void shouldAnswerWithTrue() {
-       assertTrue(true);
+        assertTrue(true);
     }
 }
