@@ -1,20 +1,14 @@
 package org;
 
-import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
 
-public class AppTest 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class AppTest
 {
-    /*
-       **
-       * @Test
-         Needs some testing!!
-     */
-
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    void shouldAnswerWithTrue() {
+       assertTrue(true);
     }
 }
