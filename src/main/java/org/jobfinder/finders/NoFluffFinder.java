@@ -29,10 +29,10 @@ public class NoFluffFinder implements Finder {
 
                Elements jobsPostings = document.getElementsByClass("posting-list-item");
 
-               jobsPostings.forEach(element -> System.out.println(element.text()));
+               jobsPostings.forEach(element -> logger.info(element.text()));
 
            } catch (Exception e) {
-               logger.info("Unexpectable exception happened! Check the log file", e.fillInStackTrace());
+               logger.info("Unexpectable error occurred, Check the log file", e.fillInStackTrace());
            }
 
 

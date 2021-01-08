@@ -31,4 +31,6 @@ public class JobWriter {
         }
 
     }
+
+    private JobWriter(){}
 }

@@ -54,7 +54,7 @@ public class MojaOstrolekaFinder implements Finder {
 
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.info("Unexpected error occurred, check log file", e.fillInStackTrace());
         }
 
         JobWriter.writeJobsToFile(jobInfo, "moja-ostroleka");

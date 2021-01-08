@@ -12,12 +12,15 @@ public class Configurer {
     private static final Logger logger = LoggerFactory.getLogger(Configurer.class);
     private static final String WORK_FOLDER_PATH = System.getProperty("user.home") + "\\Desktop\\praca";
 
+
+    private Configurer(){}
+
     public static void initDirectory() {
         try {
             Files.createDirectory(Paths.get(WORK_FOLDER_PATH));
+        } catch (FileAlreadyExistsException ignored){
         } catch (Exception e) {
-            if(e instanceof FileAlreadyExistsException) {}
-            else logger.error(e.toString());
+            logger.error(e.toString());
         }
     }
 

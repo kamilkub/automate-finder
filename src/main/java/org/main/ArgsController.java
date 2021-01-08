@@ -5,16 +5,19 @@ import org.helper.ArgsInfo;
 import org.helper.SearchArguments;
 import org.jobfinder.Finder;
 import org.jobfinder.FinderFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class ArgsController {
 
+    private static final Logger logger = LoggerFactory.getLogger(ArgsController.class);
     private SearchArguments searchArguments = SearchArguments.getInstance();
     private FinderFactory finderFactory = new FinderFactory();
 
     public void takeArguments(String [] args){
         if(args.length == 0 || args[0].equals("help")){
-            System.out.println(ArgsInfo.showHelpInfo());
+            logger.info(ArgsInfo.showHelpInfo());
         }
 
         chooseInitializer(args);
@@ -25,7 +28,7 @@ public class ArgsController {
        checkRestrictions(args);
 
        if(args[0].equals("-a")){
-
+            // TODO:: implement all finders search
        } else {
            Finder finder = finderFactory.chooseFinder(args[0]);
            finder.getAllJobsInformation();

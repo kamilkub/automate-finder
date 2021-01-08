@@ -46,7 +46,7 @@ public class JustJoinFinder implements Finder {
 
             webClient.setStatusHandler(
                (page1, s) ->
-                    System.out.println(page1.getWebResponse().getStatusCode())
+                    logger.info(String.valueOf(page1.getWebResponse().getStatusCode()))
 
             );
 
