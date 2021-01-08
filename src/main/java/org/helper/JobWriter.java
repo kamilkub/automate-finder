@@ -14,22 +14,21 @@ public class JobWriter {
     private static final Logger logger = LoggerFactory.getLogger(JobWriter.class);
 
     public static void writeJobsToFile(List<String> jobs, String pageName) {
-        logger.info("Writing jobs to file from " + pageName);
+        logger.info(String.format("Writing jobs to file from %s", pageName));
 
         String workFolderUrl = Configurer.getWorkFolderUrl();
 
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(workFolderUrl + "//" + pageName + ".html"));
+        try (BufferedWriter writer =
+                     new BufferedWriter(new FileWriter(workFolderUrl + "//" + pageName + ".html"))) {
+
             for (String line : jobs) {
                 writer.write(line);
                 writer.write(System.lineSeparator());
                 writer.newLine();
-
             }
-            writer.close();
-
         } catch (IOException e) {
             logger.error(e.toString());
         }
+
     }
 }

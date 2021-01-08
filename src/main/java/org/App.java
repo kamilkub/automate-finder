@@ -1,12 +1,10 @@
 package org;
 
 
-import org.helper.ChooseFinder;
-import org.jobfinder.MojaOstrolekaFinder;
+import org.main.MainController;
 
 public class App {
-
     public static void main(String[] args) {
-        new ChooseFinder(new MojaOstrolekaFinder()).findJob();
+        new MainController().run(args);
     }
 }
