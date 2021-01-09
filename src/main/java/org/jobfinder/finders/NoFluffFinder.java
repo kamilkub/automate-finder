@@ -3,6 +3,7 @@ package org.jobfinder.finders;
 
 import org.helper.SearchArguments;
 import org.jobfinder.Finder;
+import org.jobfinder.FinderClass;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -10,6 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
+
+@FinderClass(name = "noFluffFinder")
 public class NoFluffFinder implements Finder {
 
     private static final Logger logger = LoggerFactory.getLogger(NoFluffFinder.class);
@@ -17,8 +20,6 @@ public class NoFluffFinder implements Finder {
     private static final String NOFLUFF_URL = "https://nofluffjobs.com/pl/jobs/%s/%s?criteria=seniority%3D%s";
 
     private SearchArguments searchArguments = SearchArguments.getInstance();
-
-
 
 
     @Override

@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.helper.SearchArguments;
 import org.jobfinder.Finder;
+import org.jobfinder.FinderClass;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -20,7 +21,7 @@ import org.slf4j.LoggerFactory;
 @Getter
 @Setter
 @NoArgsConstructor
-
+@FinderClass(name = "justJoinFinder")
 public class JustJoinFinder implements Finder {
 
     private static final String JUSTJOIN_URL = "https://justjoin.it/%s/%s/%s";

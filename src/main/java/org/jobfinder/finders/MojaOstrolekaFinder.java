@@ -1,8 +1,10 @@
 package org.jobfinder.finders;
 
 
+import lombok.NoArgsConstructor;
 import org.helper.JobWriter;
 import org.jobfinder.Finder;
+import org.jobfinder.FinderClass;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -13,7 +15,8 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
+@NoArgsConstructor
+@FinderClass(name = "mojaOstrolekaFinder")
 public class MojaOstrolekaFinder implements Finder {
 
     private static final String URL = "https://ogloszenia.moja-ostroleka.pl/szukaj,praca,9,%d.html";

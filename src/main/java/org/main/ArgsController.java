@@ -16,8 +16,11 @@ public class ArgsController {
     private FinderFactory finderFactory = new FinderFactory();
 
     public void takeArguments(String [] args){
-        if(args.length == 0 || args[0].equals("help")){
-            logger.info(ArgsInfo.showHelpInfo());
+        if(args.length == 0 || args[0].equals("help")) logger.info(ArgsInfo.showHelpInfo());
+
+        if(args.length != 4) {
+            logger.info("Too less arguments provided! Makes sure you provide all [tech,city,level]");
+            System.exit(0);
         }
 
         chooseInitializer(args);
@@ -28,7 +31,7 @@ public class ArgsController {
        checkRestrictions(args);
 
        if(args[0].equals("-a")){
-            // TODO:: implement all finders search
+           finderFactory.getAllFinders().forEach(Finder::getAllJobsInformation);
        } else {
            Finder finder = finderFactory.chooseFinder(args[0]);
            finder.getAllJobsInformation();
